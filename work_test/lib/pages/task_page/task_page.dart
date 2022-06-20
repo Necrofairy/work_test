@@ -24,8 +24,9 @@ class _TaskPageState extends State<TaskPage> {
           if (snapshot.hasData) {
             return _menu(context, snapshot.data as List<TaskModel>);
           } else if (snapshot.hasError) {
-            return const Center(
-              child: Text('Error!'),
+            String error = '${snapshot.error}';
+            return Center(
+              child: Text('Error!$error'),
             );
           } else {
             return const Center(
